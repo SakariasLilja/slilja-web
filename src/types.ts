@@ -1,5 +1,4 @@
 import {
-    Generated,
     Insertable,
     Selectable,
     Updateable
@@ -11,7 +10,6 @@ export interface Database {
 }
 
 export interface ExerciseTable {
-    id: Generated<number>
     name: string
     category: 'Barbell' | 'Dumbbell' | 'Machine' | 'Bodyweight' | 'Cable' | 'Other'
 }
@@ -21,7 +19,7 @@ export type NewExercise = Insertable<ExerciseTable>
 export type ExerciseUpdate = Updateable<ExerciseTable>
 
 export interface MuscleGroupTable {
-    exercise_id: number
+    exercise_name: string
     muscle: 'Chest' | 'Upper Chest' | 'Abs' | 'Quads' | 'Hamstrings' | 'Calves' | 'Forearms' | 'Biceps' | 'Triceps' | 'Traps' | 'Upper Back' | 'Lower Back' | 'Lats' | 'Rear Delt' | 'Side Delt' | 'Front Delt' | 'Neck' | 'Glutes'
 }
 

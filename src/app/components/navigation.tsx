@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 export const Navigation = () => {
     const pathName = usePathname();
-    const linkStyle = "rounded-md bg:transparent mx-2 p-2 transition duration-[0.1s,0.5s] ease-in-out hover:bg-amber-50/50"
+    const linkStyle = "rounded-md bg:transparent mx-2 p-2 transition duration-[0.1s,0.5s] ease-in-out hover:bg-slate-500/75 hover:text-amber-50"
     return (
         <nav>
             <Link href="/" 

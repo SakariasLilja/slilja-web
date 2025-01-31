@@ -11,7 +11,7 @@ export default function Footer() {
     };
     
     return(
-        <footer className="py-5 px-3 text-amber-100 flex flex-row-reverse">
+        <footer className="py-5 px-3 text-slate-300 flex flex-row-reverse">
             <button title="Copy address" className="ml-2 italic" onClick={handleCopy}>sakarias.lilja@gmail.com</button>
             <p>Contact me:</p>
         </footer>

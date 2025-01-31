@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "./components/navigation";
+import Footer from "./components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gym Lifts",
-  description: "Gym Lifts web app",
+  title: "Sakarias Lilja",
+  description: "Personal portfolio of Sakarias Lilja",
 };
 
 export default function RootLayout({
@@ -33,9 +34,7 @@ export default function RootLayout({
             <Navigation/>
           </header>
           {children}
-          <footer className="py-5 px-3 text-fuchsia-200 text-right">
-            Created by Sakarias Lilja
-          </footer>
+          <Footer />
         </div>
       </body>
     </html>

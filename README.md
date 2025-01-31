@@ -1,4 +1,4 @@
-# Gym Lifts Web App
+# Personal Portfolio Web Page
 > Author: Sakarias Lilja
 
 ## Table of contents
@@ -11,4 +11,6 @@ The app is a personal project aimed to showcase my abilities in web development,
 The app is made using Next.js and React, containerized using Docker, written in TypeScript, styled with TailwindCSS, and utilizes PostgreSQL for database queries. The selected ORM is Kysely. Database migrations are handled with Flyway.
 
 ## 2. Idea of application
-The main purpose of the app is for my mobile application - Gym Lifts - to use it as an API to access some data. This is the main reason for choosing Next.js, as it allows for server-side rendering instead of the typical client-side.
+The primary idea of the application is to serve as a personal portfolio, that displays my talents and projects. Web pages are very easily accessed, but to be good require a lot of discipline. 
+
+The secondary purpose of the app is to serve as a RESTful API for my other project - GymLifts mobile app. This is the main reason for choosing Next.js, as it's capable of serving as a full-stack web app with good functionality.

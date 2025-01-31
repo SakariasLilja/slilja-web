@@ -5,7 +5,7 @@ export default function Home() {
   <div className="bg-transparent">
     <div className="relative isolate px-6 pt-3">
       <div className="text-center">
-        <h1 className="text-8xl font-semibold tracking-tight bg-gradient-to-r from-amber-200 to-fuchsia-200 bg-clip-text text-transparent">
+        <h1 className="text-8xl font-semibold tracking-tight bg-gradient-to-r from-amber-500 to-fuchsia-300 bg-clip-text text-transparent">
           Sakarias Lilja
         </h1>
         <p className="mt-10">

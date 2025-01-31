@@ -11,9 +11,9 @@ export default function Footer() {
     };
     
     return(
-        <footer className="py-5 px-3 text-fuchsia-200 flex flex-row-reverse">
-            <button title="Copy address" className="mx-1 italic" onClick={handleCopy}>sakarias.lilja@gmail.com</button>
-            <p>Contact me at:</p>
+        <footer className="py-5 px-3 text-amber-100 flex flex-row-reverse">
+            <button title="Copy address" className="ml-2 italic" onClick={handleCopy}>sakarias.lilja@gmail.com</button>
+            <p>Contact me:</p>
         </footer>
     );
 }

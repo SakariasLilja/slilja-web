@@ -29,12 +29,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="bg-gradient-to-br from-stone-900 to-purple-900 text-zinc-200 text-lg font-medium text-pretty sm:text-xl/6">
-          <header className="bg-black bg-opacity-30 text-amber-100 px-3 py-5 text-center">
-            <Navigation/>
-          </header>
-          {children}
-          <Footer />
+        <div 
+        className="bg-cover" 
+        style={{
+          backgroundImage: `url('/background.png')`,
+          height: `100vh`
+          }}>
+          <div className="bg-cover bg-black bg-opacity-75 text-zinc-300 text-lg font-medium text-pretty sm:text-xl/6">
+            <header className="bg-black bg-opacity-30 text-amber-100 px-3 py-5 text-center">
+              <Navigation/>
+            </header>
+            {children}
+            <Footer />
+          </div>
         </div>
       </body>
     </html>

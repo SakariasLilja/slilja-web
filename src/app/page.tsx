@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-5xl font-semibold tracking-tight bg-gradient-to-r from-amber-200 to-fuchsia-200 bg-clip-text text-transparent sm:text-8xl">
           Gym Lifts Web
         </h1>
-        <p className="mt-10 text-lg font-medium text-pretty text-gray-600 sm:text-xl/6">
+        <p className="mt-10">
           Welcome to the web page for the Gym Lifts application!
         </p>
       </div>

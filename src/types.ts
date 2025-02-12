@@ -5,9 +5,19 @@ import {
 } from 'kysely'
 
 export interface Database {
+    user: UserTable
     exercise: ExerciseTable
     muscleGroup: MuscleGroupTable
 }
+
+export interface UserTable {
+    email: string
+    password: string
+}
+
+export type User = Selectable<UserTable>
+export type NewUser = Insertable<UserTable>
+export type UserUpdate = Updateable<UserTable>
 
 export interface ExerciseTable {
     name: string

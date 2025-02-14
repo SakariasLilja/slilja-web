@@ -1,8 +1,3 @@
-import { scryptSync } from "node:crypto"
+import { genSaltSync } from "bcryptjs";
 
-const encrypt = (text: string) => {
-    const out = scryptSync(text, 'salt', 64)
-    return out.toString("utf8")
-}
-
-export { encrypt }
+export const SALT = genSaltSync(11)

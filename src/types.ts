@@ -5,9 +5,9 @@ import {
 } from 'kysely'
 
 export interface Database {
-    user: UserTable
-    exercise: ExerciseTable
-    muscleGroup: MuscleGroupTable
+    users: UserTable
+    exercises: ExerciseTable
+    muscle_groups: MuscleGroupTable
 }
 
 export interface UserTable {

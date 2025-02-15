@@ -1,8 +1,5 @@
-const users = [
-    { name: "Mike" },
-    { name: "John" },
-];
+import { getUsers } from "@/services/userService";
 
 export async function GET() {
-    return Response.json(users);
+    return Response.json(await getUsers());
 }

@@ -1,9 +1,9 @@
 import { db } from "@/database"
 import { NewUser, UserUpdate } from "@/types";
 
-const userExists = async (email: string) => {
+const getUser = async (email: string) => {
     const user = await db.selectFrom('users').selectAll().where('email', '=', email).execute()
-    return user.length > 0
+    return user
 }
 
 const getUsers = async () => {
@@ -22,4 +22,4 @@ const deleteUser = async (email: string) => {
     return await db.deleteFrom('users').where('email', '=', email).returningAll().execute()
 }
 
-export { userExists,addUser, updateUser, deleteUser, getUsers }
+export { getUser, addUser, updateUser, deleteUser, getUsers }

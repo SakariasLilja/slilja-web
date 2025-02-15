@@ -11,7 +11,7 @@ const getUsers = async () => {
 }
 
 const addUser = async (user: NewUser) => {
-    await db.insertInto('users').values(user).execute()
+    return await db.insertInto('users').values(user).returning('id').execute()
 }
 
 const updateUser = async (password: string, user: UserUpdate) => {

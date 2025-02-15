@@ -5,10 +5,10 @@ import { Pool } from "pg";
 // Instantiates a new connection to the database running on localhost port 5432
 const dialect = new PostgresDialect({
     pool: new Pool({
-        database: 'database',
-        host: 'db',
-        user: 'username',
-        password: 'password',
+        database: process.env.PGDATABASE,
+        host: process.env.PGHOST,
+        user: process.env.PGUSER,
+        password: process.env.PGPASSWORD,
         port: 5432,
         max: 10,
     })

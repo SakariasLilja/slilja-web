@@ -2,6 +2,7 @@
 
 import { FormError } from "@/app/components/form_error"
 import { login } from "@/auth/login"
+import Link from "next/link"
 import { useActionState } from "react"
 
 export default function Login() {
@@ -32,7 +33,7 @@ export default function Login() {
                     <input type="password" placeholder="password" name="password" id="password" className="input input-bordered" required />
                     <FormError errors={state.errors?.password} />
                     <label className="label">
-                        <a href="/register" className="label-text-alt link link-hover">Not a member? Register here!</a>
+                        <Link href="/register" className="label-text-alt link link-hover">Not a member? Register here!</Link>
                     </label>
                     </div>
                     <div className="form-control mt-6">

@@ -1,20 +1,19 @@
 "use client"
 
 import { FormError } from "@/app/components/form_error"
-import { register } from "@/auth/register"
+import { login } from "@/auth/login"
 import { useFormState } from "react-dom"
 
-export default function Register() {
-    const [state, formAction] = useFormState(register, {success: false})
+export default function Login() {
+    const [state, formAction] = useFormState(login, {success: false})
 
-    return(
+    return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                <h1 className="text-5xl font-bold">Register!</h1>
+                <h1 className="text-5xl font-bold">Login!</h1>
                 <p className="py-6">
-                    Registering allows you to store GymLift data on multiple devices, ensuring that your 
-                    data will not be lost.
+                    Login to your profile to easily manage your saved lifts and exercises from the web!
                 </p>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -33,11 +32,11 @@ export default function Register() {
                     <input type="password" placeholder="password" name="password" id="password" className="input input-bordered" required />
                     <FormError errors={state.errors?.password} />
                     <label className="label">
-                        <a href="/login" className="label-text-alt link link-hover">Already registered? Login here!</a>
+                        <a href="/register" className="label-text-alt link link-hover">Not a member? Register here!</a>
                     </label>
                     </div>
                     <div className="form-control mt-6">
-                    <button className="btn btn-primary" type="submit">Register</button>
+                    <button className="btn btn-primary" type="submit">Login</button>
                     </div>
                 </form>
                 </div>

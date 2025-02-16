@@ -1,10 +1,10 @@
 "use server"
 
-import { addUser } from "@/services/userService";
+import { addUser, getUser } from "@/services/userService";
 import { hashSync } from "bcryptjs";
 import { z } from "zod";
 
-const userSchema = z.object({
+export const userSchema = z.object({
     email: z.string().email({ message: 'Please enter a valid email.' }),
     password: z
         .string()
@@ -12,15 +12,16 @@ const userSchema = z.object({
         .max(20, { message: 'Password may be at most 20 characters long.' })
 })
 
-export interface RegisterErrors {
+export interface UserErrors {
     errors?: {
         email?: string[]
         password?: string[]
     }
     success: boolean
+    redirect?: 'register' | 'login'
 }
 
-export const register = async (data: RegisterErrors, formData: FormData): Promise<RegisterErrors> => {
+export const register = async (data: UserErrors, formData: FormData): Promise<UserErrors> => {
     const res = userSchema.safeParse({
         email: formData.get('email'),
         password: formData.get('password')
@@ -30,6 +31,14 @@ export const register = async (data: RegisterErrors, formData: FormData): Promis
         return {
             errors: res.error.flatten().fieldErrors,
             success: false
+        }
+    }
+
+    const checkExists = await getUser(res.data.email)
+    if (checkExists.length > 0) {
+        return {
+            success: false,
+            redirect: 'login'
         }
     }
 

@@ -2,24 +2,7 @@
 
 import { addUser, getUser } from "@/services/userService";
 import { hashSync } from "bcryptjs";
-import { z } from "zod";
-
-export const userSchema = z.object({
-    email: z.string().email({ message: 'Please enter a valid email.' }),
-    password: z
-        .string()
-        .min(4, { message: 'Password must be at least 4 characters long.' })
-        .max(20, { message: 'Password may be at most 20 characters long.' })
-})
-
-export interface UserErrors {
-    errors?: {
-        email?: string[]
-        password?: string[]
-    }
-    success: boolean
-    redirect?: boolean
-}
+import { UserErrors, userSchema } from "./schemas";
 
 export const register = async (data: UserErrors, formData: FormData): Promise<UserErrors> => {
     const res = userSchema.safeParse({
@@ -38,7 +21,9 @@ export const register = async (data: UserErrors, formData: FormData): Promise<Us
     if (checkExists.length > 0) {
         return {
             success: false,
-            redirect: true
+            errors: {
+                email: ['Email already in use.']
+            }
         }
     }
 

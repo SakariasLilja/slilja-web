@@ -1,7 +1,7 @@
 "use server"
 
 import { getUser } from "@/services/userService";
-import { UserErrors, userSchema } from "./register";
+import { UserErrors, userSchema } from "./schemas";
 import { compareSync } from "bcryptjs";
 
 export const login = async (data: UserErrors, formData: FormData): Promise<UserErrors> => {
@@ -22,7 +22,9 @@ export const login = async (data: UserErrors, formData: FormData): Promise<UserE
     if (userArr.length < 1) {
         return {
             success: false,
-            redirect: true
+            errors: {
+                email: ['No user of this email exists.']
+            }
         }
     }
 
@@ -33,7 +35,7 @@ export const login = async (data: UserErrors, formData: FormData): Promise<UserE
         return {
             success: false,
             errors: {
-                password: ['Incorrect password']
+                password: ['Incorrect password!']
             }
         }
     }

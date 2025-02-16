@@ -35,7 +35,7 @@ export default function RootLayout({
           height: `100vh`
           }}>
           <div className="bg-cover bg-black bg-opacity-25 text-slate-300 text-lg font-medium text-pretty sm:text-xl/6">
-            <header className="text-slate-300 text-center">
+            <header className="text-slate-300 text-center mb-3">
               <Navigation/>
             </header>
             {children}

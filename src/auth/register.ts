@@ -18,7 +18,7 @@ export interface UserErrors {
         password?: string[]
     }
     success: boolean
-    redirect?: 'register' | 'login'
+    redirect?: boolean
 }
 
 export const register = async (data: UserErrors, formData: FormData): Promise<UserErrors> => {
@@ -38,7 +38,7 @@ export const register = async (data: UserErrors, formData: FormData): Promise<Us
     if (checkExists.length > 0) {
         return {
             success: false,
-            redirect: 'login'
+            redirect: true
         }
     }
 

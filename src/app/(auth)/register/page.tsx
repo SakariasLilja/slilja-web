@@ -2,13 +2,13 @@
 
 import { FormError } from "@/app/components/form_error"
 import { register } from "@/auth/register"
-import { useFormState } from "react-dom"
+import { useActionState } from "react"
 
 export default function Register() {
-    const [state, formAction] = useFormState(register, {success: false})
+    const [state, formAction, isLoading] = useActionState(register, {success: false})
 
     return(
-        <div className="hero bg-base-200 min-h-screen">
+        <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                 <h1 className="text-5xl font-bold">Register!</h1>
@@ -37,7 +37,9 @@ export default function Register() {
                     </label>
                     </div>
                     <div className="form-control mt-6">
-                    <button className="btn btn-primary" type="submit">Register</button>
+                    <button className="btn btn-primary" type="submit" disabled={isLoading}>
+                        {isLoading ? 'Loading...' : 'Register'}
+                    </button>
                     </div>
                 </form>
                 </div>

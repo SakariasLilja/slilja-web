@@ -1,29 +1,29 @@
 services:
-  server:
+  web-app:
     build:
       context: .
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 3000:3000
     depends_on:
-      - db
+      - web-db
     env_file:
       - project.env
 
-  db:
+  web-db:
     container_name: postgresql_database
     image: postgres:16.1
     restart: unless-stopped
     env_file:
       - project.env
   
-  db-migrations:
-    image: flyway/flyway:10.0.0-alpine
+  web-db-migrations:
+    image: flyway/flyway:11.5.0-alpine
     env_file:
       - project.env
     depends_on:
-      - db
+      - web-db
     volumes:
       - ./flyway/sql:/flyway/sql
     command: -connectRetries=60 -baselineOnMigrate=true migrate

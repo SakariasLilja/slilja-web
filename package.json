@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "bcryptjs": "^3.0.0",
+    "better-auth": "^1.2.5",
     "eslint": "^9.20.1",
     "jose": "^5.9.6",
     "kysely": "^0.27.5",
-    "next": "15.1.6",
+    "next": "^15.2.4",
     "pg": "^8.13.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

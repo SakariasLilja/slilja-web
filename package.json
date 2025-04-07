@@ -12,7 +12,6 @@
     "bcryptjs": "^3.0.0",
     "better-auth": "^1.2.5",
     "eslint": "^9.20.1",
-    "jose": "^5.9.6",
     "kysely": "^0.27.5",
     "next": "^15.2.4",
     "pg": "^8.13.2",
@@ -28,6 +27,8 @@
     "@types/react-dom": "^19",
     "daisyui": "^4.12.23",
     "eslint-config-next": "15.1.6",
+    "kanel": "^3.11.1",
+    "kanel-kysely": "^0.7.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

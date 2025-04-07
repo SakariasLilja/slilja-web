@@ -2,7 +2,7 @@ import Database from "./schemas/Database";
 import { Kysely, PostgresDialect } from "kysely";
 import { Pool } from "pg";
 
-// Instantiates a new connection to the database running on localhost port 5432
+// Creates a new connection to the container's running database based on environment variables
 const dialect = new PostgresDialect({
     pool: new Pool({
         database: process.env.PGDATABASE,

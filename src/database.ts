@@ -10,7 +10,6 @@ const dialect = new PostgresDialect({
         user: process.env.PGUSER,
         password: process.env.PGPASSWORD,
         port: parseInt(process.env.PGPORT || ''),
-        max: 10,
     })
 })
 

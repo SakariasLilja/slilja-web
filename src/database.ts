@@ -1,4 +1,4 @@
-import { Database } from "./types";
+import Database from "./schemas/Database";
 import { Kysely, PostgresDialect } from "kysely";
 import { Pool } from "pg";
 
@@ -9,7 +9,7 @@ const dialect = new PostgresDialect({
         host: process.env.PGHOST,
         user: process.env.PGUSER,
         password: process.env.PGPASSWORD,
-        port: 5432,
+        port: parseInt(process.env.PGPORT || ''),
         max: 10,
     })
 })
